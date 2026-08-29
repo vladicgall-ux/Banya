@@ -436,9 +436,11 @@
   .reveal{ opacity:1; transform:none; }
 
   @media (max-width:920px){
-    .hero-grid{ grid-template-columns:1fr; }
-    .hero-visual{ order:-1; max-width:340px; margin-inline:auto; }
+    .hero{ min-height:0; align-items:flex-start; padding-bottom:56px; }
+    .hero-grid{ grid-template-columns:1fr; gap:28px; }
+    .hero-visual{ order:-1; max-width:340px; margin:0 auto; }
     .hero-copy{ max-width:100%; text-align:left; }
+    .hero-emblem{ margin-top:32px; }
     .cards{ grid-template-columns:1fr; }
     .loc-grid{ grid-template-columns:1fr; }
     .loc-gallery{ order:-1; }
