@@ -306,10 +306,44 @@
     background: rgba(10,18,16,.55); border:1px solid rgba(244,239,226,.12);
     backdrop-filter: blur(10px);
   }
-  .visual-chip .flame{ width:34px; height:34px; border-radius:10px; flex:none;
-    background: linear-gradient(155deg, var(--ember), var(--ember-strong));
-    display:flex; align-items:center; justify-content:center; }
-  .visual-chip .flame svg{ width:18px; height:18px; color:#241204; }
+  .flame3d{ position:relative; width:34px; height:34px; flex:none; }
+  .flame3d::before{
+    content:""; position:absolute; inset:-7px; border-radius:50%;
+    background: radial-gradient(circle, rgba(221,149,72,.5), transparent 68%);
+    filter: blur(5px);
+  }
+  .flame3d i{ position:absolute; left:50%; bottom:1px; border-radius:50% 50% 50% 50% / 62% 62% 34% 34%; }
+  .flame3d .f-outer{
+    width:21px; height:29px; margin-left:-10.5px;
+    background: linear-gradient(195deg, var(--ember-strong) 0%, var(--ember) 55%, #ffcf6b 100%);
+    box-shadow: 0 0 12px rgba(221,149,72,.55);
+    animation: flameFlick1 2.6s ease-in-out infinite;
+  }
+  .flame3d .f-mid{
+    width:14px; height:20px; margin-left:-7px; bottom:2px;
+    background: linear-gradient(195deg, #e2711c 0%, #ffb74d 60%, #fff1c2 100%);
+    animation: flameFlick2 2.1s ease-in-out infinite;
+  }
+  .flame3d .f-core{
+    width:6px; height:10px; margin-left:-3px; bottom:3px; border-radius:50%;
+    background: radial-gradient(circle at 50% 68%, #fff8e1 0%, #ffe08a 60%, transparent 100%);
+    animation: flameFlick3 1.7s ease-in-out infinite;
+  }
+  @keyframes flameFlick1{
+    0%,100%{ transform: scaleY(1) scaleX(1) rotate(-3deg); }
+    25%{ transform: scaleY(1.09) scaleX(.93) rotate(2deg); }
+    50%{ transform: scaleY(.93) scaleX(1.06) rotate(-5deg); }
+    75%{ transform: scaleY(1.05) scaleX(.96) rotate(3deg); }
+  }
+  @keyframes flameFlick2{
+    0%,100%{ transform: scaleY(1) rotate(2deg); opacity:1; }
+    30%{ transform: scaleY(1.12) rotate(-4deg); opacity:.92; }
+    60%{ transform: scaleY(.9) rotate(4deg); opacity:1; }
+  }
+  @keyframes flameFlick3{
+    0%,100%{ transform: scaleY(1) translateY(0); }
+    50%{ transform: scaleY(1.18) translateY(-1px); }
+  }
   .visual-chip .txt b{ display:block; font-size:.85rem; font-weight:700; }
   .visual-chip .txt span{ font-size:.72rem; color:var(--paper-faint); }
   .visual-float{
@@ -532,7 +566,7 @@
            <div class="visual-card-media">
 <div class="visual-steam" aria-hidden="true"><i></i><i></i><i></i></div>
             <div class="visual-chip">
-              <span class="flame"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c0-1-1-1.5-1-2.5 2 1 3 3 3 5.5a5 5 0 0 1-10 0C7 8 9 5 12 2Z" fill="currentColor"/></svg></span>
+              <span class="flame3d" aria-hidden="true"><i class="f-outer"></i><i class="f-mid"></i><i class="f-core"></i></span>
               <span class="txt"><b>Дровяная печь</b><span>сухой пар, живой огонь</span></span>
             </div>
            </div>
