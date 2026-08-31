@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/photos/hero-lake-night.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/photos/hero-lake-day.webp" fetchpriority="high">
 <style>
   /* ============ DESIGN TOKENS ============
      A single committed world: a dark banya-by-the-lake night.
@@ -273,7 +273,7 @@
     position:absolute; inset:0; border-radius:32px; overflow:hidden;
     background:
       linear-gradient(200deg, rgba(10,18,16,.15) 0%, rgba(8,14,12,.35) 55%, rgba(6,10,9,.55) 100%),
-      url('assets/photos/hero-lake-night.webp') center/cover;
+      url('assets/photos/hero-lake-day.webp') center/cover;
     border: 1px solid rgba(244,239,226,0.08);
   }
   .visual-card-media::after{
@@ -359,7 +359,7 @@
   .loc-gallery{ position:relative; height:clamp(320px,42vw,460px); }
   .loc-photo{ position:absolute; border-radius:var(--r-md); overflow:hidden; box-shadow:var(--shadow-deep); border:1px solid rgba(244,239,226,.1); }
   .loc-photo.p1{ inset:0 18% 14% 0; transform:rotate(-4deg); z-index:1;
-    background: linear-gradient(200deg, rgba(10,18,16,.08) 0%, rgba(8,14,12,.42) 100%), url('assets/photos/forest-lakeside.webp') 80% 44%/auto 150% no-repeat; }
+    background: linear-gradient(200deg, rgba(10,18,16,.08) 0%, rgba(8,14,12,.42) 100%), url('assets/photos/hero-lake-night.webp') center/cover; }
   .loc-photo.p2{ inset:16% 0 0 26%; transform:rotate(3deg); z-index:2;
     background: linear-gradient(200deg, rgba(10,18,16,.08) 0%, rgba(8,14,12,.42) 100%), url('assets/photos/sauna-interior.webp') center/cover; }
   .loc-badge{
